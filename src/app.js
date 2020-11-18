@@ -4,6 +4,7 @@ const { get } = require("http");
 const hbs = require("hbs");
 const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
+require("dotenv").config();
 const app = express(); //generate the express application
 const port = process.env.PORT || 3000;
 //Paths for express config
