@@ -1,4 +1,5 @@
 const request = require("request");
+require("dotenv").config();
 const forecast = (long, lat, callback) => {
   const url =
     "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -6,7 +7,8 @@ const forecast = (long, lat, callback) => {
     "&" +
     "lon=" +
     encodeURIComponent(long) +
-    "&appid=97901c9cfff2d5d4e8e82cf371410b0b";
+    "&appid=" +
+    process.env.API_KEY2;
 
   request({ url, json: true }, (error, { body }) => {
     if (error) {
